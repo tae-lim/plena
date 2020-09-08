@@ -1,0 +1,104 @@
+<html>
+  <head></head>
+  <body>
+    
+  </body>
+  <script>
+    const createCharFreq = str => {
+      if (!str) return str;
+
+      const charFreq = {};
+
+      for (let i = 0; i < str.length;i ++) {
+        const lowerCase = str[i].toLowerCase();
+        if (!charFreq[lowerCase]) charFreq[lowerCase] = 0;
+        charFreq[lowerCase] += 1
+      }
+
+      return charFreq;
+    };
+
+    const findUpperCaseFreq = str => {
+      if (!str) return str;
+
+      const upperCaseFreq = {};
+
+      for (let i = 0; i < str.length; i++) {
+        if (!upperCaseFreq[str[i].toLowerCase()]) upperCaseFreq[str[i].toLowerCase()] = 0;
+        if (str[i].toUpperCase() === str[i]) {
+          upperCaseFreq[str[i].toLowerCase()]++;
+        } 
+      }
+
+      return upperCaseFreq;
+    };
+
+    const findFirstNonRepeatingChar = str => {
+      if (!str) return str;
+
+      const charFreq = createCharFreq(str);
+    
+      for (let i = 0; i < str.length; i++) {
+        if (charFreq[str[i]] === 1) {
+          return str[i];
+        }
+      }
+
+      return null;
+    }
+
+
+    const buildOrderedString = (tuples, upperCaseFreq) => {
+      let orderedString = [];
+
+      for (let i = 0; i < tuples.length; i++) {
+        let [freq, char] = tuples[i];
+        while (freq) {
+          if (upperCaseFreq[char]) {
+            orderedString.push(char.toUpperCase());
+            upperCaseFreq[char]--;
+          } else {
+            orderedString.push(char);
+          }
+          freq--;
+        }
+      }
+
+      return orderedString.join('');
+    };
+  
+    const orderStringByAscendingOccurences = str => {
+      if (!str) return str;
+
+      const charFreq = createCharFreq(str);
+      const upperCaseFreq = findUpperCaseFreq(str);
+      let tuples = [];
+
+      for (char in charFreq) {
+        tuples.push([charFreq[char], char]);
+      }
+
+      tuples.sort((a, b) => {
+        if (a[0] < b[0]) return -1;
+        if (b[0] < a[0]) return 1;
+        for (let i = 0; i < str.length; i++) {
+          if (str[i] === a[1]) return -1;
+          if (str[i] === b[1]) return 1;
+        }
+      });
+      
+      return buildOrderedString(tuples, upperCaseFreq);
+    };
+
+    (function() {
+      const str = window.prompt('Enter a string');
+      if (str) {
+        const firstNonRepeatingChar = findFirstNonRepeatingChar(str);
+        if (firstNonRepeatingChar) {
+          window.alert(firstNonRepeatingChar);
+          window.alert(orderStringByAscendingOccurences(str));
+        }
+      }
+    })();
+  </script>
+</html>
