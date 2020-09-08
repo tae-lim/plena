@@ -8,7 +8,7 @@ For example: If given the string ‘Bubble’, the letter ‘u’ would be the f
 
 **A) How long did this assessment take you in minutes? (Example: 45 minutes)**
 
-48 minutes 54 seconds
+48 minutes 54 seconds. This is without the time to setup github/html file and purely just coding in javascript. 
 
 **B) Available start date?**
 
