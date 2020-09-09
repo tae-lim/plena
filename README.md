@@ -4,6 +4,12 @@ Create an application that will prompt for a user to input a string. Using the u
  
 For example: If given the string ‘Bubble’, the letter ‘u’ would be the first character returned from the program. Once the first character is found and displayed back to the user, rewrite the string in order of number of occurrences and order from the inputted string. In the above example ‘Bubble’ would then be rewritten as ‘uleBbb’. Display this to the user.
 
+# How to run the code
+
+Open Developer Tools on respective browser (Google Chrome: cmd + option + i)
+Paste script contents into console (content in between <script> </script>)
+Run code (cmd + enter)
+
 # Final Questions
 
 **A) How long did this assessment take you in minutes? (Example: 45 minutes)**
