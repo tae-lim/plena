@@ -6,9 +6,9 @@ For example: If given the string ‘Bubble’, the letter ‘u’ would be the f
 
 # How to run the code
 
-Open Developer Tools on respective browser (Google Chrome: cmd + option + i)
-Paste script contents into console (content in between <script> </script>)
-Run code (cmd + enter)
+1. Open Developer Tools on respective browser (Google Chrome: cmd + option + i)
+2. Paste script contents into console (content in between <script> </script>)
+3. Run code (cmd + enter)
 
 # Final Questions
 
